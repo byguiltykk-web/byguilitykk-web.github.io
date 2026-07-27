@@ -250,7 +250,8 @@ export default function Home() {
 
           <Link className="button" href="/boutique">
             Découvrir la collection
-          </Link>
+            </Link>
+          
         </div>
       </header>
 
@@ -273,10 +274,12 @@ export default function Home() {
               <div className="hero-actions">
                 <Link className="button" href="/boutique">
                   Découvrir la collection
-                </Link>
+               </Link>
+               
                 <Link className="button button-secondary" href="/guide">
                   Lire le guide corgi
-                </a>
+                 </Link>
+                
               </div>
 
               <div className="hero-proof" aria-label="Avantages">

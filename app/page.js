@@ -1,3 +1,4 @@
+import Link from "next/link";
 const categories = [
   {
     icon: "🦴",
@@ -240,16 +241,16 @@ export default function Home() {
           </a>
 
           <nav className="main-nav" aria-label="Navigation principale">
-            <a href="#collection">Boutique</a>
-            <a href="#categories">Catégories</a>
-            <a href="#guide">Guide corgi</a>
-            <a href="#avis">Avis</a>
-            <a href="#faq">FAQ</a>
+            <Link href="/boutique">Boutique</Link>
+            <Link href="#categories">Catégories</Link>
+            <Link href="#guide">Guide corgi</Link>
+            <Link href="#avis">Avis</Link>
+            <Link href="#faq">FAQ</Link>
           </nav>
 
-          <a className="button button-small" href="#collection">
-            Découvrir
-          </a>
+          <Link className="button" href="/boutique">
+            Découvrir la collection
+          </Link>
         </div>
       </header>
 
@@ -270,10 +271,10 @@ export default function Home() {
               </p>
 
               <div className="hero-actions">
-                <a className="button" href="#collection">
+                <Link className="button" href="/boutique">
                   Découvrir la collection
-                </a>
-                <a className="button button-secondary" href="#guide">
+                </Link>
+                <Link className="button button-secondary" href="/guide">
                   Lire le guide corgi
                 </a>
               </div>

@@ -1,14 +1,9 @@
 /** @type {import('next').NextConfig} */
-
-const repoName = 'byguilitykk.github.io';
-const isProduction = process.env.NODE_ENV === 'production';
-
 const nextConfig = {
-  output: 'export',
+  output: "export",
   trailingSlash: true,
 
-  basePath: isProduction ? `/${repoName}` : '',
-  assetPrefix: isProduction ? `/${repoName}/` : '',
+  basePath: process.env.PAGES_BASE_PATH || "",
 
   images: {
     unoptimized: true,

@@ -1,4 +1,5 @@
 import "./globals.css";
+import { CartProvider } from "@/context/CartContext";
 
 export const metadata = {
   title: {
@@ -6,7 +7,7 @@ export const metadata = {
     template: "%s | Maison Corgi",
   },
   description:
-    "Maison Corgi propose des accessoires, jouets, vêtements, cadeaux et objets lifestyle soigneusement sélectionnés pour les corgis et leurs humains.",
+    "Maison Corgi propose des accessoires, jouets, vêtements, cadeaux et objets lifestyle pour les corgis et leurs humains.",
   keywords: [
     "boutique corgi",
     "accessoires corgi",
@@ -20,7 +21,9 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="fr">
-      <body>{children}</body>
+      <body>
+        <CartProvider>{children}</CartProvider>
+      </body>
     </html>
   );
 }

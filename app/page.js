@@ -1,4 +1,5 @@
 import Link from "next/link";
+import CartLink from "@/components/CartLink";
 const categories = [
   {
     icon: "🦴",
@@ -248,10 +249,7 @@ export default function Home() {
             <Link href="#faq">FAQ</Link>
           </nav>
 
-          <Link className="button" href="/boutique">
-            Découvrir la collection
-            </Link>
-          
+          <CartLink />
         </div>
       </header>
 

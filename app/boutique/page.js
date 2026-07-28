@@ -1,3 +1,4 @@
+import CartLink from "@/components/CartLink";
 import Link from "next/link";
 import BoutiqueClient from "./BoutiqueClient";
 import {
@@ -42,14 +43,7 @@ export default function BoutiquePage() {
             <a href="#reassurance">Nos engagements</a>
           </nav>
 
-          <button
-            className="button button-small"
-            type="button"
-            disabled
-            title="Le panier sera ajouté à l’étape suivante"
-          >
-            Panier · 0
-          </button>
+          <CartLink />
         </div>
       </header>
 

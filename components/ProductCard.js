@@ -3,6 +3,8 @@
 import { useState } from "react";
 import Link from "next/link";
 import { useCart } from "@/context/CartContext";
+const basePath =
+  process.env.NEXT_PUBLIC_BASE_PATH || "";
 
 const priceFormatter = new Intl.NumberFormat(
   "fr-FR",
@@ -29,28 +31,36 @@ export default function ProductCard({ product }) {
   return (
     <article className="shop-product-card">
       <Link
-        className="shop-product-visual"
-        href={`/boutique/${product.slug}`}
-        style={{ background: product.background }}
-        aria-label={`Voir ${product.name}`}
-      >
-        <span className="shop-product-badge">
-          {product.badge}
-        </span>
+  className="shop-product-visual"
+  href={`/boutique/${product.slug}`}
+  style={{ background: product.background }}
+  aria-label={`Voir ${product.name}`}
+>
+  {product.image ? (
+    <img
+      className="shop-product-image"
+      src={`${basePath}${product.image}`}
+      alt={product.name}
+    />
+  ) : (
+    <span
+      className="shop-product-emoji"
+      aria-hidden="true"
+    >
+      {product.emoji}
+    </span>
+  )}
 
-        <span
-          className="shop-product-emoji"
-          aria-hidden="true"
-        >
-          {product.emoji}
-        </span>
+  <span className="shop-product-badge">
+    {product.badge}
+  </span>
 
-        {product.isNew && (
-          <span className="shop-new-indicator">
-            Nouveau
-          </span>
-        )}
-      </Link>
+  {product.isNew && (
+    <span className="shop-new-indicator">
+      Nouveau
+    </span>
+  )}
+</Link>
 
       <div className="shop-product-content">
         <p className="shop-product-category">

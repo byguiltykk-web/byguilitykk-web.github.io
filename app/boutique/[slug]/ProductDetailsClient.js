@@ -3,6 +3,8 @@
 import { useState } from "react";
 import Link from "next/link";
 import { useCart } from "@/context/CartContext";
+const basePath =
+  process.env.NEXT_PUBLIC_BASE_PATH || "";
 
 const priceFormatter = new Intl.NumberFormat(
   "fr-FR",
@@ -61,12 +63,20 @@ export default function ProductDetailsClient({
             {product.badge}
           </span>
 
-          <span
-            className="product-detail-emoji"
-            aria-hidden="true"
-          >
-            {product.emoji}
-          </span>
+          {product.image ? (
+  <img
+    className="product-detail-image"
+    src={`${basePath}${product.image}`}
+    alt={product.name}
+  />
+) : (
+  <span
+    className="product-detail-emoji"
+    aria-hidden="true"
+  >
+    {product.emoji}
+  </span>
+)}
 
           <small>
             {galleryLabels[activeVisual]}

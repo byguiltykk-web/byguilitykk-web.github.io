@@ -3,6 +3,7 @@ export const products = [
     id: 1,
     slug: "harnais-nuage",
     name: "Harnais Nuage",
+    image: "/images/products/harnais-nuage.jpg",
     category: "Accessoires",
     collection: "Essentiels",
     price: 34.9,
@@ -16,7 +17,7 @@ export const products = [
     reviews: 128,
     sizes: ["S", "M", "L"],
     colors: ["Caramel", "Crème", "Sauge"],
-    emoji: "C:/Users/miste/maison-corgi/public/images.jpg",
+    image: "/images/products/harnais-nuage.jpg",
     background:
       "linear-gradient(145deg, #f9d8bd 0%, #f3b77f 55%, #d98342 100%)",
   },

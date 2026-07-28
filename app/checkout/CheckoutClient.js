@@ -506,36 +506,40 @@ export default function CheckoutClient() {
 
         <div className="checkout-summary-products">
           {cart.map((item) => (
-            <article
-              className="checkout-summary-product"
-              key={item.id}
-            >
-              <div
-                className="checkout-summary-visual"
-                style={{
-                  background: item.background,
-                }}
-              >
-                <span aria-hidden="true">
-                  {item.emoji}
-                </span>
+  <article
+    className="checkout-summary-product"
+    key={item.cartKey}
+  >
+    <div
+      className="checkout-summary-visual"
+      style={{
+        background: item.background,
+      }}
+    >
+      <span aria-hidden="true">
+        {item.emoji}
+      </span>
 
-                <small>{item.qty}</small>
-              </div>
+      <small>{item.qty}</small>
+    </div>
 
-              <div>
-                <strong>{item.name}</strong>
+    <div>
+      <strong>{item.name}</strong>
 
-                <small>{item.category}</small>
-              </div>
+      <small>{item.category}</small>
 
-              <strong>
-                {priceFormatter.format(
-                  item.price * item.qty,
-                )}
-              </strong>
-            </article>
-          ))}
+      <small className="checkout-summary-variants">
+        {item.selectedSize} · {item.selectedColor}
+      </small>
+    </div>
+
+    <strong>
+      {priceFormatter.format(
+        item.price * item.qty,
+      )}
+    </strong>
+  </article>
+))}
         </div>
 
         <div className="checkout-summary-lines">

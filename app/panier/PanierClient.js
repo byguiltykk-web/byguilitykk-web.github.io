@@ -90,7 +90,7 @@ export default function PanierClient() {
 
         <div className="cart-items">
           {cart.map((item) => (
-            <article className="cart-item" key={item.id}>
+            <article className="cart-item" key={item.cartKey}>
               <div
                 className="cart-item-visual"
                 style={{ background: item.background }}
@@ -102,10 +102,15 @@ export default function PanierClient() {
                 <p>{item.category}</p>
                 <h2>{item.name}</h2>
 
+                <div className="cart-item-variants">
+                  <span>Taille : {item.selectedSize}</span>
+                  <span>Couleur : {item.selectedColor}</span>
+                </div>
+
                 <button
                   className="cart-remove-mobile"
                   type="button"
-                  onClick={() => removeFromCart(item.id)}
+                  onClick={() => removeFromCart(item.cartKey)}
                 >
                   Supprimer
                 </button>
@@ -114,9 +119,7 @@ export default function PanierClient() {
               <div className="cart-quantity">
                 <button
                   type="button"
-                  onClick={() =>
-                    updateQty(item.id, item.qty - 1)
-                  }
+                  onClick={() => updateQty(item.cartKey, item.qty - 1)}
                   aria-label={`Retirer une unité de ${item.name}`}
                 >
                   −
@@ -126,9 +129,7 @@ export default function PanierClient() {
 
                 <button
                   type="button"
-                  onClick={() =>
-                    updateQty(item.id, item.qty + 1)
-                  }
+                  onClick={() => updateQty(item.cartKey, item.qty + 1)}
                   aria-label={`Ajouter une unité de ${item.name}`}
                 >
                   +
@@ -137,9 +138,7 @@ export default function PanierClient() {
 
               <div className="cart-item-price">
                 <strong>
-                  {priceFormatter.format(
-                    item.price * item.qty,
-                  )}
+                  {priceFormatter.format(item.price * item.qty)}
                 </strong>
 
                 {item.qty > 1 && (
@@ -152,7 +151,7 @@ export default function PanierClient() {
               <button
                 className="cart-remove"
                 type="button"
-                onClick={() => removeFromCart(item.id)}
+                onClick={() => removeFromCart(item.cartKey)}
                 aria-label={`Supprimer ${item.name} du panier`}
               >
                 ×

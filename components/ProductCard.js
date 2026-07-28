@@ -1,16 +1,21 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import { useCart } from "@/context/CartContext";
 
-const priceFormatter = new Intl.NumberFormat("fr-FR", {
-  style: "currency",
-  currency: "EUR",
-});
+const priceFormatter = new Intl.NumberFormat(
+  "fr-FR",
+  {
+    style: "currency",
+    currency: "EUR",
+  },
+);
 
 export default function ProductCard({ product }) {
   const { addToCart } = useCart();
-  const [justAdded, setJustAdded] = useState(false);
+  const [justAdded, setJustAdded] =
+    useState(false);
 
   function handleAddToCart() {
     addToCart(product);
@@ -23,15 +28,20 @@ export default function ProductCard({ product }) {
 
   return (
     <article className="shop-product-card">
-      <div
+      <Link
         className="shop-product-visual"
+        href={`/boutique/${product.slug}`}
         style={{ background: product.background }}
+        aria-label={`Voir ${product.name}`}
       >
         <span className="shop-product-badge">
           {product.badge}
         </span>
 
-        <span className="shop-product-emoji" aria-hidden="true">
+        <span
+          className="shop-product-emoji"
+          aria-hidden="true"
+        >
           {product.emoji}
         </span>
 
@@ -40,7 +50,7 @@ export default function ProductCard({ product }) {
             Nouveau
           </span>
         )}
-      </div>
+      </Link>
 
       <div className="shop-product-content">
         <p className="shop-product-category">
@@ -48,7 +58,13 @@ export default function ProductCard({ product }) {
         </p>
 
         <div className="shop-product-title-row">
-          <h2>{product.name}</h2>
+          <h2>
+            <Link
+              href={`/boutique/${product.slug}`}
+            >
+              {product.name}
+            </Link>
+          </h2>
 
           <button
             className="shop-favorite-button"
@@ -59,13 +75,12 @@ export default function ProductCard({ product }) {
           </button>
         </div>
 
-        <div
-          className="shop-product-rating"
-          aria-label={`${product.rating} étoiles sur 5`}
-        >
+        <div className="shop-product-rating">
           <span>★★★★★</span>
+
           <small>
-            {product.rating.toFixed(1)} · {product.reviews} avis
+            {product.rating.toFixed(1)} ·{" "}
+            {product.reviews} avis
           </small>
         </div>
 
@@ -76,25 +91,41 @@ export default function ProductCard({ product }) {
         <div className="shop-product-footer">
           <div className="shop-product-prices">
             <strong>
-              {priceFormatter.format(product.price)}
+              {priceFormatter.format(
+                product.price,
+              )}
             </strong>
 
             {product.oldPrice && (
               <del>
-                {priceFormatter.format(product.oldPrice)}
+                {priceFormatter.format(
+                  product.oldPrice,
+                )}
               </del>
             )}
           </div>
 
-          <button
-            className={`shop-product-button ${
-              justAdded ? "shop-product-button-added" : ""
-            }`}
-            type="button"
-            onClick={handleAddToCart}
-          >
-            {justAdded ? "Ajouté ✓" : "Ajouter"}
-          </button>
+          <div className="shop-product-actions">
+            <Link
+              href={`/boutique/${product.slug}`}
+            >
+              Voir
+            </Link>
+
+            <button
+              className={
+                justAdded
+                  ? "shop-product-button shop-product-button-added"
+                  : "shop-product-button"
+              }
+              type="button"
+              onClick={handleAddToCart}
+            >
+              {justAdded
+                ? "Ajouté ✓"
+                : "Ajouter"}
+            </button>
+          </div>
         </div>
       </div>
     </article>

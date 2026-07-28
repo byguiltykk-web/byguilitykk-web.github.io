@@ -16,7 +16,7 @@ export const products = [
     reviews: 128,
     sizes: ["S", "M", "L"],
     colors: ["Caramel", "Crème", "Sauge"],
-    emoji: "🦺",
+    emoji: "C:/Users/miste/maison-corgi/public/images.jpg",
     background:
       "linear-gradient(145deg, #f9d8bd 0%, #f3b77f 55%, #d98342 100%)",
   },

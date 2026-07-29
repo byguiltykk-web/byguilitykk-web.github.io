@@ -3,18 +3,18 @@ import { CartProvider } from "@/context/CartContext";
 
 export const metadata = {
   title: {
-    default: "Maison Corgi — Boutique dédiée aux corgis",
-    template: "%s | Maison Corgi",
+    default: "CoinCorgi — Boutique dédiée aux corgis",
+    template: "%s | CoinCorgi",
   },
   description:
-    "Maison Corgi propose des accessoires, jouets, vêtements, cadeaux et objets lifestyle pour les corgis et leurs humains.",
+    "CoinCorgi propose des accessoires, jouets, vêtements, cadeaux et objets lifestyle pour les corgis et leurs humains.",
   keywords: [
     "boutique corgi",
     "accessoires corgi",
     "cadeaux corgi",
     "jouets corgi",
     "vêtements corgi",
-    "Maison Corgi",
+    "CoinCorgi",
   ],
 };
 

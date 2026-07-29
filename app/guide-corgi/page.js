@@ -73,7 +73,7 @@ export default function GuideCorgiPage() {
           <div className="container content-hero-grid">
             <div>
               <p className="eyebrow">
-                Le guide Maison Corgi
+                Le guide CoinCorgi
               </p>
 
               <h1>

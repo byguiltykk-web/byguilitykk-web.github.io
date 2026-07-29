@@ -1,6 +1,7 @@
 import CartLink from "@/components/CartLink";
 import Link from "next/link";
 import BoutiqueClient from "./BoutiqueClient";
+import SiteHeader from "@/components/SiteHeader";
 import {
   products,
   productCategories,
@@ -9,49 +10,21 @@ import {
 export const metadata = {
   title: "Boutique corgi",
   description:
-    "Découvrez les accessoires, jouets, vêtements, cadeaux et objets lifestyle de Maison Corgi.",
+    "Découvrez les accessoires, jouets, vêtements, cadeaux et objets lifestyle de CoinCorgi.",
 };
 
 export default function BoutiquePage() {
   return (
     <>
-      <div className="announcement">
-        Livraison offerte dès 59 € · Retours sous 30 jours ·
-        Paiement sécurisé
-      </div>
+      <SiteHeader />
 
-      <header className="site-header">
-        <div className="container header-inner">
-          <Link
-            className="logo"
-            href="/"
-            aria-label="Maison Corgi, accueil"
-          >
-            <span className="logo-mark">MC</span>
-            <span>
-              Maison <strong>Corgi</strong>
-            </span>
-          </Link>
-
-          <nav
-            className="main-nav"
-            aria-label="Navigation principale"
-          >
-            <Link href="/">Accueil</Link>
-            <Link href="/boutique">Boutique</Link>
-            <a href="#catalogue">Catégories</a>
-            <a href="#reassurance">Nos engagements</a>
-          </nav>
-
-          <CartLink />
-        </div>
-      </header>
+      
 
       <main className="shop-page">
         <section className="shop-hero">
           <div className="container shop-hero-grid">
             <div>
-              <p className="eyebrow">La sélection Maison Corgi</p>
+              <p className="eyebrow">La sélection CoinCorgi</p>
 
               <h1>
                 Des produits adorables, utiles et choisis avec soin.
@@ -143,7 +116,7 @@ export default function BoutiquePage() {
 
       <footer className="site-footer">
         <div className="container footer-bottom shop-footer-bottom">
-          <span>© 2026 Maison Corgi. Projet de démonstration.</span>
+          <span>© 2026 CoinCorgi. Projet de démonstration.</span>
 
           <Link href="/">Retour à l’accueil</Link>
         </div>

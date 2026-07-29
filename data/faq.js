@@ -65,7 +65,7 @@ export const faqItems = [
   {
     category: "Contact",
     question:
-      "Comment contacter Maison Corgi ?",
+      "Comment contacter CoinCorgi ?",
     answer:
       "Vous pouvez utiliser le formulaire de la page Contact. Dans cette version de démonstration, le message n’est pas réellement envoyé.",
   },

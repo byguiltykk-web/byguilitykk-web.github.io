@@ -21,7 +21,7 @@ const categoryDetails = {
     benefits: [
       "Coupe pensée pour laisser le chien bouger librement",
       "Matière souple et agréable à porter",
-      "Style chaleureux inspiré de l’univers Maison Corgi",
+      "Style chaleureux inspiré de l’univers CoinCorgi",
     ],
     features: [
       "Tissu doux et extensible",
@@ -74,7 +74,7 @@ const categoryDetails = {
   Cadeaux: {
     benefits: [
       "Une idée originale pour les passionnés de corgis",
-      "Illustration exclusive Maison Corgi",
+      "Illustration exclusive CoinCorgi",
       "Objet utile et décoratif",
     ],
     features: [
@@ -93,7 +93,7 @@ const categoryDetails = {
     benefits: [
       "Produit signature aux finitions particulièrement soignées",
       "Matériaux sélectionnés pour leur qualité",
-      "Design exclusif Maison Corgi",
+      "Design exclusif CoinCorgi",
     ],
     features: [
       "Fabrication fictive en petite série",
@@ -143,12 +143,12 @@ const descriptions = {
     "La Gamelle Atelier associe stabilité, simplicité et esthétique. Son poids limite les déplacements pendant les repas tandis que sa surface lisse facilite le nettoyage.",
 
   "coffret-maison-corgi":
-    "Le Coffret Maison Corgi réunit plusieurs essentiels dans une présentation premium. Il constitue une idée cadeau complète pour accueillir un nouveau compagnon ou faire plaisir à un passionné.",
+    "Le Coffret CoinCorgi réunit plusieurs essentiels dans une présentation premium. Il constitue une idée cadeau complète pour accueillir un nouveau compagnon ou faire plaisir à un passionné.",
 };
 
 const fallbackDetails = {
   benefits: [
-    "Produit sélectionné dans l’univers Maison Corgi",
+    "Produit sélectionné dans l’univers CoinCorgi",
     "Design chaleureux et fonctionnel",
     "Pensé pour une utilisation quotidienne",
   ],
@@ -171,7 +171,7 @@ export function getProductDetails(product) {
   return {
     longDescription:
       descriptions[product.slug] ??
-      `${product.short} Ce produit a été sélectionné pour compléter l’univers chaleureux et pratique de Maison Corgi.`,
+      `${product.short} Ce produit a été sélectionné pour compléter l’univers chaleureux et pratique de CoinCorgi.`,
 
     benefits: template.benefits,
 

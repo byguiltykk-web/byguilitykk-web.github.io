@@ -6,7 +6,7 @@ import ContactClient from "./ContactClient";
 export const metadata = {
   title: "Contact",
   description:
-    "Contactez Maison Corgi pour une question concernant les produits ou le fonctionnement de la boutique.",
+    "Contactez CoinCorgi pour une question concernant les produits ou le fonctionnement de la boutique.",
 };
 
 export default function ContactPage() {
@@ -28,7 +28,7 @@ export default function ContactPage() {
 
               <p>
                 Utilisez le formulaire pour tester
-                l’expérience de contact Maison Corgi.
+                l’expérience de contact CoinCorgi.
                 Aucun message réel ne sera envoyé.
               </p>
             </div>

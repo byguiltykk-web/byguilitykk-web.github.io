@@ -8,7 +8,7 @@ export default function SiteFooter() {
           <Link
             className="logo footer-logo"
             href="/"
-            aria-label="Maison Corgi, accueil"
+            aria-label="CoinCorgi, accueil"
           >
             <span className="logo-mark">MC</span>
 
@@ -78,7 +78,7 @@ export default function SiteFooter() {
 
       <div className="container footer-bottom">
         <span>
-          © 2026 Maison Corgi. Projet de démonstration.
+          © 2026 CoinCorgi. Projet de démonstration.
         </span>
 
         <span>

@@ -6,7 +6,7 @@ import { faqItems } from "@/data/faq";
 export const metadata = {
   title: "FAQ",
   description:
-    "Retrouvez les réponses aux questions fréquentes concernant Maison Corgi, les produits, la livraison et le paiement.",
+    "Retrouvez les réponses aux questions fréquentes concernant CoinCorgi, les produits, la livraison et le paiement.",
 };
 
 export default function FAQPage() {
@@ -64,7 +64,7 @@ export default function FAQPage() {
               </p>
 
               <Link className="button" href="/contact">
-                Contacter Maison Corgi
+                Contacter CoinCorgi
               </Link>
             </aside>
 

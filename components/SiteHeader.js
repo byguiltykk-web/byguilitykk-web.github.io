@@ -4,6 +4,9 @@ import { useState } from "react";
 import Link from "next/link";
 import CartLink from "@/components/CartLink";
 
+const basePath =
+  process.env.NEXT_PUBLIC_BASE_PATH || "";
+
 const navigation = [
   {
     href: "/",
@@ -48,16 +51,15 @@ export default function SiteHeader() {
       <header className="site-header">
         <div className="container header-inner shared-header-inner">
           <Link
-            className="logo"
+            className="logo coincorgi-logo"
             href="/"
-            aria-label="Maison Corgi, accueil"
+            aria-label="CoinCorgi, accueil"
             onClick={closeMenu}
           >
-            <span className="logo-mark">MC</span>
-
-            <span>
-              Maison <strong>Corgi</strong>
-            </span>
+            <img
+              src={`${basePath}/images/logo-coincorgi.png`}
+              alt="CoinCorgi"
+            />
           </Link>
 
           <button
@@ -69,7 +71,9 @@ export default function SiteHeader() {
                 : "Ouvrir le menu"
             }
             aria-expanded={menuOpen}
-            onClick={() => setMenuOpen((current) => !current)}
+            onClick={() =>
+              setMenuOpen((current) => !current)
+            }
           >
             <span />
             <span />

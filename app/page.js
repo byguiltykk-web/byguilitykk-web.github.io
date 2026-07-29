@@ -1,5 +1,7 @@
 import Link from "next/link";
 import CartLink from "@/components/CartLink";
+import SiteHeader from "@/components/SiteHeader";
+import SiteFooter from "@/components/SiteFooter";
 const categories = [
   {
     icon: "🦴",
@@ -126,132 +128,24 @@ const questions = [
 ];
 
 function CorgiIllustration() {
+  const basePath =
+    process.env.NEXT_PUBLIC_BASE_PATH || "";
+
   return (
-    <svg
-      className="corgi-illustration"
-      viewBox="0 0 520 430"
-      role="img"
-      aria-label="Illustration souriante d’un corgi"
-    >
-      <ellipse cx="265" cy="384" rx="165" ry="23" fill="#c77b4530" />
-
-      <path
-        d="M155 151 L107 51 Q101 28 123 39 L202 102 Z"
-        fill="#ba682f"
-      />
-      <path
-        d="M365 151 L413 51 Q419 28 397 39 L318 102 Z"
-        fill="#ba682f"
-      />
-
-      <path
-        d="M143 127 L120 67 L181 111 Z"
-        fill="#f2b28a"
-      />
-      <path
-        d="M377 127 L400 67 L339 111 Z"
-        fill="#f2b28a"
-      />
-
-      <path
-        d="M137 153
-           Q158 90 260 86
-           Q362 90 383 153
-           Q409 230 371 300
-           Q332 364 260 364
-           Q188 364 149 300
-           Q111 230 137 153Z"
-        fill="#d77b38"
-      />
-
-      <path
-        d="M194 105
-           Q226 87 260 87
-           Q294 87 326 105
-           Q304 136 260 153
-           Q216 136 194 105Z"
-        fill="#fff8ed"
-      />
-
-      <path
-        d="M167 247
-           Q183 184 228 177
-           Q260 170 292 177
-           Q337 184 353 247
-           Q346 329 260 349
-           Q174 329 167 247Z"
-        fill="#fff8ed"
-      />
-
-      <ellipse cx="205" cy="205" rx="19" ry="24" fill="#3f2b22" />
-      <ellipse cx="315" cy="205" rx="19" ry="24" fill="#3f2b22" />
-      <circle cx="199" cy="198" r="6" fill="#ffffff" />
-      <circle cx="309" cy="198" r="6" fill="#ffffff" />
-
-      <ellipse cx="260" cy="245" rx="30" ry="22" fill="#3f2b22" />
-
-      <path
-        d="M260 265 Q238 291 213 273"
-        fill="none"
-        stroke="#3f2b22"
-        strokeWidth="8"
-        strokeLinecap="round"
-      />
-      <path
-        d="M260 265 Q282 291 307 273"
-        fill="none"
-        stroke="#3f2b22"
-        strokeWidth="8"
-        strokeLinecap="round"
-      />
-
-      <path
-        d="M240 287 Q260 314 280 287 Q275 326 260 332 Q245 326 240 287Z"
-        fill="#e58b8b"
-      />
-
-      <circle cx="165" cy="248" r="17" fill="#ef9a8090" />
-      <circle cx="355" cy="248" r="17" fill="#ef9a8090" />
-
-      <path
-        d="M178 345 Q132 352 119 379 Q161 390 205 367Z"
-        fill="#d77b38"
-      />
-      <path
-        d="M342 345 Q388 352 401 379 Q359 390 315 367Z"
-        fill="#d77b38"
-      />
-    </svg>
+    <img
+      className="hero-corgi-image"
+      src={`${basePath}/images/hero-corgi.png`}
+      alt="Corgi souriant CoinCorgi"
+    />
   );
 }
 
 export default function Home() {
   return (
     <>
-      <div className="announcement">
-        Livraison offerte dès 59 € · Retours sous 30 jours · Paiement sécurisé
-      </div>
+      <SiteHeader />
 
-      <header className="site-header">
-        <div className="container header-inner">
-          <a className="logo" href="#accueil" aria-label="Maison Corgi, accueil">
-            <span className="logo-mark">MC</span>
-            <span>
-              Maison <strong>Corgi</strong>
-            </span>
-          </a>
-
-          <nav className="main-nav" aria-label="Navigation principale">
-            <Link href="/boutique">Boutique</Link>
-            <Link href="#categories">Catégories</Link>
-            <Link href="#guide">Guide corgi</Link>
-            <Link href="#avis">Avis</Link>
-            <Link href="#faq">FAQ</Link>
-          </nav>
-
-          <CartLink />
-        </div>
-      </header>
+    
 
       <main>
         <section className="hero" id="accueil">
@@ -272,12 +166,11 @@ export default function Home() {
               <div className="hero-actions">
                 <Link className="button" href="/boutique">
                   Découvrir la collection
-               </Link>
-               
-                <Link className="button button-secondary" href="/guide">
+                </Link>
+
+                <Link className="button button-secondary" href="/guide-corgi">
                   Lire le guide corgi
-                 </Link>
-                
+                </Link>
               </div>
 
               <div className="hero-proof" aria-label="Avantages">
@@ -294,7 +187,7 @@ export default function Home() {
               <div className="corgi-card">
                 <div className="corgi-card-top">
                   <span>Le membre préféré de la famille</span>
-                  <span>♡</span>
+                
                 </div>
 
                 <CorgiIllustration />
@@ -316,7 +209,7 @@ export default function Home() {
             <div className="section-heading">
               <div>
                 <p className="eyebrow">Pour chaque moment</p>
-                <h2>Explorez la Maison Corgi</h2>
+                <h2>Explorez le CoinCorgi</h2>
               </div>
 
               <p>
@@ -389,7 +282,7 @@ export default function Home() {
           <div className="container">
             <div className="promise-intro">
               <div>
-                <p className="eyebrow">Pourquoi Maison Corgi ?</p>
+                <p className="eyebrow">Pourquoi CoinCorgi ?</p>
                 <h2>Une boutique pensée avec le cœur et un peu de poils.</h2>
               </div>
 
@@ -550,7 +443,7 @@ export default function Home() {
               <h2>Des nouveautés, des conseils et beaucoup de bonne humeur.</h2>
               <p>
                 Inscrivez-vous pour être informé du lancement officiel de
-                Maison Corgi.
+                Coin.
               </p>
             </div>
 
@@ -570,48 +463,7 @@ export default function Home() {
         </section>
       </main>
 
-      <footer className="site-footer">
-        <div className="container footer-grid">
-          <div className="footer-brand">
-            <a className="logo footer-logo" href="#accueil">
-              <span className="logo-mark">MC</span>
-              <span>
-                Maison <strong>Corgi</strong>
-              </span>
-            </a>
-            <p>
-              La maison en ligne des corgis heureux et des humains complètement
-              conquis.
-            </p>
-          </div>
-
-          <div>
-            <h3>Boutique</h3>
-            <a href="#collection">Produits vedettes</a>
-            <a href="#categories">Catégories</a>
-            <a href="#newsletter">Nouveautés</a>
-          </div>
-
-          <div>
-            <h3>Découvrir</h3>
-            <a href="#guide">Guide corgi</a>
-            <a href="#avis">Avis clients</a>
-            <a href="#faq">FAQ</a>
-          </div>
-
-          <div>
-            <h3>Informations</h3>
-            <a href="#faq">Livraison et retours</a>
-            <a href="#faq">Paiement sécurisé</a>
-            <a href="#newsletter">Contact</a>
-          </div>
-        </div>
-
-        <div className="container footer-bottom">
-          <span>© 2026 Maison Corgi. Projet de démonstration.</span>
-          <span>Fait avec amour et quelques friandises.</span>
-        </div>
-      </footer>
+      <SiteFooter />
     </>
   );
 }

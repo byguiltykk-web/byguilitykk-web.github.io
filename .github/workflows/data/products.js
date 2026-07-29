@@ -233,7 +233,7 @@ export const products = [
   {
     id: 12,
     slug: "coffret-maison-corgi",
-    name: "Coffret Maison Corgi",
+    name: "Coffret CoinCorgi",
     category: "Collection premium",
     collection: "Premium",
     price: 79.9,

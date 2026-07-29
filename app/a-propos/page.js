@@ -5,7 +5,7 @@ import SiteFooter from "@/components/SiteFooter";
 export const metadata = {
   title: "À propos",
   description:
-    "Découvrez l’histoire, les valeurs et la vision de Maison Corgi.",
+    "Découvrez l’histoire, les valeurs et la vision de CoinCorgi.",
 };
 
 const values = [
@@ -50,7 +50,7 @@ export default function AboutPage() {
               </h1>
 
               <p>
-                Maison Corgi est née d’une idée simple :
+                CoinCorgi est née d’une idée simple :
                 réunir dans un même univers des produits
                 utiles, chaleureux et joyeux, sans perdre de
                 vue le confort du chien.
@@ -67,7 +67,7 @@ export default function AboutPage() {
               </div>
 
               <div>
-                <small>Maison Corgi</small>
+                <small>CoinCorgi</small>
                 <strong>
                   Une marque fictive avec une vraie vision.
                 </strong>
@@ -91,7 +91,7 @@ export default function AboutPage() {
 
             <div className="about-story-text">
               <p>
-                L’objectif de Maison Corgi est de proposer une
+                L’objectif de CoinCorgi est de proposer une
                 expérience cohérente, depuis la découverte
                 d’un produit jusqu’aux conseils permettant de
                 bien l’utiliser.
@@ -198,7 +198,7 @@ export default function AboutPage() {
               </p>
 
               <h2>
-                Découvrez l’univers Maison Corgi.
+                Découvrez l’univers CoinCorgi.
               </h2>
             </div>
 
